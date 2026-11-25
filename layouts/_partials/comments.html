@@ -1,0 +1,19 @@
+{{- $giscus := site.Params.giscus -}}
+<div class="giscus"></div>
+<script
+  src="https://giscus.app/client.js"
+  data-repo="{{ $giscus.repo }}"
+  data-repo-id="{{ index $giscus "repoid" }}"
+  data-category="{{ $giscus.category }}"
+  data-category-id="{{ index $giscus "categoryid" }}"
+  data-mapping="{{ $giscus.mapping }}"
+  data-strict="{{ $giscus.strict }}"
+  data-reactions-enabled="{{ index $giscus "reactionsenabled" }}"
+  data-emit-metadata="{{ index $giscus "emitmetadata" }}"
+  data-input-position="{{ index $giscus "inputposition" }}"
+  data-theme="{{ $giscus.theme }}"
+  data-lang="{{ $giscus.lang }}"
+  data-loading="{{ $giscus.loading }}"
+  crossorigin="anonymous"
+  async>
+</script>

@@ -1,0 +1,60 @@
+baseURL: https://yzdyq.github.io.pages.dev/
+defaultContentLanguage: zh
+title: YZDYQ 的博客
+theme: PaperMod
+
+pagination:
+  pagerSize: 10
+
+enableRobotsTXT: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+languages:
+  zh:
+    label: 中文
+    locale: zh-Hans-CN
+    weight: 1
+    menu:
+      main:
+        - name: 文章
+          url: posts/
+          weight: 10
+        - name: 归档
+          url: archives/
+          weight: 20
+        - name: 标签
+          url: tags/
+          weight: 30
+        - name: 搜索
+          url: search/
+          weight: 40
+
+params:
+  env: production
+  description: 个人静态博客
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  comments: true
+  giscus:
+    repo: yzdyq/yzdyq.github.io
+    repoId: "<GISCUS_REPO_ID>"
+    category: "<GISCUS_CATEGORY>"
+    categoryId: "<GISCUS_CATEGORY_ID>"
+    mapping: pathname
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: bottom
+    theme: preferred_color_scheme
+    lang: zh-CN
+    loading: lazy
