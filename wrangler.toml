@@ -3,7 +3,7 @@ compatibility_date = "2026-11-26"
 keep_vars = true
 
 [build]
-command = "hugo --gc --minify"
+command = "git submodule update --init --recursive && node scripts/build-hugo.mjs"
 
 [assets]
 directory = "./public"

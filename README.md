@@ -22,11 +22,10 @@ hugo new content posts/my-post.md
 
 ## Cloudflare Workers
 
-Worker 使用 Wrangler 托管 Hugo 生成的静态文件。`wrangler.toml` 中的 `[build]` 会在部署前运行 Hugo，`[assets]` 将 `./public` 指定为静态资源目录；`keep_vars = true` 可保留控制台中配置的 Worker 变量。
+Worker 使用 Wrangler 托管 Hugo 生成的静态文件。`wrangler.toml` 中的 `[build]` 会按 `HUGO_VERSION` 下载并运行 Hugo，`[assets]` 将 `./public` 指定为静态资源目录；`keep_vars = true` 可保留控制台中配置的 Worker 变量。
 
 ```powershell
-git submodule update --init --recursive
 npx wrangler deploy
 ```
 
-`public/` 已加入 `.gitignore`，不会提交到仓库。`HUGO_VERSION=0.170.0` 会作为 Worker 变量写入 Wrangler 配置；它是运行时变量，不会安装 Hugo，部署环境还必须能运行 Hugo。
+`public/` 已加入 `.gitignore`，不会提交到仓库。`HUGO_VERSION=0.170.0` 同时作为 Worker 变量写入 Wrangler 配置，并由构建脚本用于下载对应的 Hugo 版本。
