@@ -20,12 +20,13 @@ hugo new content posts/my-post.md
 
 在 GitHub 仓库启用 Discussions 并安装 Giscus App，然后在 giscus.app 中选择仓库和分类，将提供的 `repoId`、`category` 和 `categoryId` 填入 `hugo.yaml`。当前评论映射方式为 `pathname`。
 
-## Cloudflare Workers
+## Cloudflare Pages
 
-Worker 使用 Wrangler 托管 Hugo 生成的静态文件。`wrangler.toml` 中的 `[build]` 会按 `HUGO_VERSION` 下载并运行 Hugo，`[assets]` 将 `./public` 指定为静态资源目录；`keep_vars = true` 可保留控制台中配置的 Worker 变量。
+- Production branch：`main`
+- Framework preset：Hugo
+- Root directory：仓库根目录
+- Build command：`git submodule update --init --recursive && hugo --gc --minify`
+- Build output directory：`public`
+- Environment variable：`HUGO_VERSION=0.170.0`
 
-```powershell
-npx wrangler deploy
-```
-
-`public/` 已加入 `.gitignore`，不会提交到仓库。`HUGO_VERSION=0.170.0` 同时作为 Worker 变量写入 Wrangler 配置，并由构建脚本用于下载对应的 Hugo 版本。
+`public/` 已加入 `.gitignore`，不会提交到仓库。当前站点地址为 `https://yzdyq.pages.dev/`，并与 `hugo.yaml` 中的 `baseURL` 一致。推送到 GitHub 后由 Cloudflare Pages 自动构建和发布。
