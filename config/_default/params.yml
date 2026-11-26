@@ -1,0 +1,87 @@
+menu:
+  - name: home
+    url: ""
+    icon: false
+  - name: archives
+    url: archives
+    icon: false
+  - name: tags
+    url: tags
+    icon: false
+
+mainSections:
+  - post
+
+author: YZDYQ
+description: 个人静态博客
+subtitle:
+  typing:
+    enable: false
+  text: 个人静态博客
+
+banner: /images/site-cover.svg
+avatar: avatar.svg
+cover: /images/site-cover.svg
+toc: true
+
+footer:
+  since: 2026
+  powered: true
+  count: true
+  busuanzi: false
+  icon:
+    url: false
+    rotate: false
+    mask: false
+
+sidebar:
+  position: right
+  menu: true
+  article:
+    show_common: true
+
+social:
+  github: https://github.com/yzdyq
+
+comment:
+  default: giscus
+  title:
+    zh-CN: 发表评论
+
+giscus:
+  enable: true
+  repo: yzdyq/yzdyq.github.io
+  repoId: R_kgDOVM-JFA
+  category: Announcements
+  categoryId: DIC_kwDOVM-JFM4DL9C2
+  mapping: pathname
+  strict: 0
+  reactionsEnabled: 1
+  emitMetadata: 0
+  inputPosition: bottom
+  theme:
+    light:
+    dark:
+
+pjax:
+  enable: true
+
+player:
+  disable_on_mobile: false
+  position: before_sidebar
+  aplayer:
+    enable: false
+    options:
+      audio: []
+      fixed: true
+      autoplay: true
+      loop: all
+      order: list
+      preload: none
+      volume: 0.7
+      mutex: true
+      listFolded: false
+      lrcType: 0
+
+reimu_cursor:
+  enable: false
