@@ -1,5 +1,6 @@
 ---
 title: "博客启程"
+slug: hello-world
 date: 2026-11-25T21:00:00+08:00
 draft: false
 description: "欢迎来到我的个人博客。"
