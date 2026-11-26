@@ -1,4 +1,4 @@
-baseURL: https://yzdyq.github.io.pages.dev/
+baseURL: https://yzdyq-github-io.13398838386.workers.dev/
 defaultContentLanguage: zh
 title: YZDYQ 的博客
 theme: PaperMod
@@ -47,9 +47,9 @@ params:
   comments: true
   giscus:
     repo: yzdyq/yzdyq.github.io
-    repoId: "<GISCUS_REPO_ID>"
-    category: "<GISCUS_CATEGORY>"
-    categoryId: "<GISCUS_CATEGORY_ID>"
+    repoId: "R_kgDOVM-JFA"
+    category: "Announcements"
+    categoryId: "DIC_kwDOVM-JFM4DL9C2"
     mapping: pathname
     strict: "0"
     reactionsEnabled: "1"
