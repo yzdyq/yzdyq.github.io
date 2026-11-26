@@ -1,0 +1,12 @@
+name = "yzdyq-github-io"
+compatibility_date = "2026-11-26"
+keep_vars = true
+
+[build]
+command = "hugo --gc --minify"
+
+[assets]
+directory = "./public"
+
+[vars]
+HUGO_VERSION = "0.170.0"

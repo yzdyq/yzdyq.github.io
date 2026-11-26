@@ -20,12 +20,13 @@ hugo new content posts/my-post.md
 
 在 GitHub 仓库启用 Discussions 并安装 Giscus App，然后在 giscus.app 中选择仓库和分类，将提供的 `repoId`、`category` 和 `categoryId` 填入 `hugo.yaml`。当前评论映射方式为 `pathname`。
 
-## Cloudflare Pages
+## Cloudflare Workers
 
-- Framework preset：Hugo
-- Build command：`git submodule update --init --recursive && hugo --gc --minify`
-- Build output directory：`public`
-- Environment variable：`HUGO_VERSION=0.170.0`
+Worker 使用 Wrangler 托管 Hugo 生成的静态文件。`wrangler.toml` 中的 `[build]` 会在部署前运行 Hugo，`[assets]` 将 `./public` 指定为静态资源目录；`keep_vars = true` 可保留控制台中配置的 Worker 变量。
 
-构建源为仓库根目录；推送到 GitHub 后由 Cloudflare Pages 自动发布。
-Cloudflare 项目生成的 `*.pages.dev` 地址应与 `hugo.yaml` 的 `baseURL` 一致；若 Pages 分配的项目子域名不同，请先将 `baseURL` 改为该地址。
+```powershell
+git submodule update --init --recursive
+npx wrangler deploy
+```
+
+`public/` 已加入 `.gitignore`，不会提交到仓库。`HUGO_VERSION=0.170.0` 会作为 Worker 变量写入 Wrangler 配置；它是运行时变量，不会安装 Hugo，部署环境还必须能运行 Hugo。
